@@ -7,11 +7,17 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          '<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">',
+      },
+    ],
   },
-
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['~/assets/css/rhpteam.min.css', '~/assets/css/external.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
@@ -47,14 +53,14 @@ export default {
   build: {
     extend(config, ctx) {
       config.module.rules.push({
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.(js|vue)$/,
-        loader: "eslint-loader",
+        loader: 'eslint-loader',
         exclude: /(node_modules)/,
         options: {
-          fix: true
-        }
+          fix: true,
+        },
       })
-    }
-  }
+    },
+  },
 }
