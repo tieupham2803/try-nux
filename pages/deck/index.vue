@@ -1,7 +1,12 @@
 <template>
   <div id="root">
     <div class="ct">
-      <h2>pls enter number of deck to show</h2>
+      <div class="d_flex justify_content_between my_3">
+        <h2>List of your deck</h2>
+        <button class="btn btn_success" @click.prevent="openModal">
+          create a deck
+        </button>
+      </div>
       <ul class="decks-list">
         <li>
           <nuxt-link class="deck" to="/deck/1212122">
@@ -17,9 +22,26 @@
             </div>
           </nuxt-link>
         </li>
+        <li>
+          <nuxt-link class="deck" to="/deck/1212122">
+            <div class="deck-card card">
+              <img
+                src="https://dreamztoreality.net/wp-content/uploads/2019/08/Learn-English-590x369.jpg"
+                alt="thumbnal card"
+              />
+              <div class="card_body">
+                <h3>Title</h3>
+                <p>Description</p>
+              </div>
+            </div>
+          </nuxt-link>
+        </li>
       </ul>
-      <button @click="showDeck">go to deck</button>
     </div>
+    <v-modal name="test">
+      <h1>hello test modal</h1>
+      <button class="btn btn_danger" @click.prevent="closeModal">X</button>
+    </v-modal>
   </div>
 </template>
 <style lang="scss">
@@ -54,6 +76,16 @@ export default {
     }
   },
   methods: {
+    openModal() {
+      this.$modal.open({
+        name: 'test',
+      })
+    },
+    closeModal() {
+      this.$modal.close({
+        name: 'test',
+      })
+    },
     showDeck() {
       // this.$router.push('/deck/' + this.deckId)
       this.$router.push(`/deck/${this.deckId}`)

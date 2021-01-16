@@ -1,7 +1,9 @@
 <template>
   <div>
     Default Layout
+    <default-header />
     <Nuxt />
+    <default-footer />
   </div>
 </template>
 
@@ -54,3 +56,13 @@ html {
   background-color: #35495e;
 }
 </style>
+<script>
+import DefaultHeader from '@/components/Header/DefaultHeader'
+import DefaultFooter from '@/components/Footer/DefaultFooter'
+export default {
+  components: {
+    DefaultFooter,
+    DefaultHeader,
+  },
+}
+</script>

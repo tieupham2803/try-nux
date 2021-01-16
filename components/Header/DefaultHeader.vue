@@ -20,7 +20,7 @@
 </template>
 <style lang="scss">
 header {
-  background-color: #000;
+  background-color: #343433;
   color: #fff;
   height: 100px;
   display: flex;

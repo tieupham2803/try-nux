@@ -1,9 +1,6 @@
 a {
     text-decoration: none;
 }
-a.nuxt-link-exact-active {
-    color:red;
-}
 a:hover {
     text-decoration: none;
 }
